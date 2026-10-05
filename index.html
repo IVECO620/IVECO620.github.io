@@ -3,98 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OMSI 2 Repainty - IVECO620</title>
+    <title>OMSI repainty</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #181818;
-            color: #f0f0f0;
+            background-color: #f9f9f9;
+            color: #333333;
             margin: 0;
-            padding: 20px;
+            padding: 0;
         }
+
+        /* Horní lišta */
         header {
-            text-align: center;
-            background-color: #242424;
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border-bottom: 4px solid #ff9800;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        h1 {
-            color: #ff9800;
-            margin: 0 0 10px 0;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 20px;
+            color: #222;
         }
+
+        .logo-icon {
+            background-color: #ff8c00;
+            color: white;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        nav a.active {
+            color: #d9534f;
+        }
+
+        .btn-support {
+            background-color: #ff8c00;
+            color: white !important;
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+
+        /* Hlavní obsah */
         .container {
-            max-width: 1000px;
-            margin: 0 auto;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #111;
+        }
+
+        /* Mřížka pro autobusy */
         .grid {
             display: flex;
+            gap: 30px;
             flex-wrap: wrap;
-            gap: 20px;
         }
+
         .card {
-            background-color: #242424;
-            border-radius: 8px;
-            padding: 15px;
-            width: calc(50% - 10px);
-            box-sizing: border-box;
-            border: 1px solid #333;
+            width: calc(33.333% - 20px);
+            text-decoration: none;
+            color: inherit;
         }
-        .card img {
+
+        .card-img-container {
             width: 100%;
             height: 200px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 15px;
         }
+
+        .card img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
         .card h3 {
-            color: #ff9800;
-            margin-top: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+            color: #444;
+            line-height: 1.4;
         }
-        .btn {
-            display: inline-block;
-            background-color: #ff9800;
-            color: #000;
-            padding: 10px 15px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            margin-top: 10px;
+
+        /* Reakce na menší obrazovky */
+        @media (max-width: 900px) {
+            .card {
+                width: calc(50% - 15px);
+            }
         }
-        .btn:hover {
-            background-color: #e68a00;
+        @media (max-width: 600px) {
+            .card {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>OMSI 2 Repainty</h1>
-            <p>Vítám vás na mém webu s nátěry pro autobusy do OMSI 2!</p>
-        </header>
+    <!-- NAVIGAČNÍ LIŠTA -->
+    <header>
+        <div class="logo">
+            <span class="logo-icon">🚌</span>
+            <span>OMSI repainty</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">VŠECHNY</a></li>
+                <li><a href="#">REPAINTY</a></li>
+                <li><a href="#">VOZIDLA</a></li>
+                <li><a href="#">NAHRÁT</a></li>
+                <li><a href="#">PRAVIDLA</a></li>
+                <li><a href="#">KONTAKT</a></li>
+                <li><a href="#" class="btn-support">Chci podpořit!</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <h2>Moje repainty ke stažení</h2>
+    <!-- HLAVNÍ STRÁNKA -->
+    <div class="container">
+        <h1>Všechny repainty</h1>
 
         <div class="grid">
-            
-            <!-- PRVNÍ REPAINT (S FOTKOU KAROSY) -->
-            <div class="card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Havi%C5%99ov%2C_Autobus_Karosa_B951.jpg/800px-Havi%C5%99ov%2C_Autobus_Karosa_B951.jpg" alt="Karosa B951E">
-                <h3>Karosa B951E - DPP Praha</h3>
-                <p><strong>Model:</strong> Karosa B951E</p>
-                <p>Nátěr Dopravního podniku hl. m. Prahy.</p>
-                <a href="#" class="btn">Stáhnout repaint</a>
-            </div>
 
-            <!-- DRUHÝ REPAINT -->
-            <div class="card">
-                <h3>Iveco Urbanway 12M</h3>
-                <p><strong>Model:</strong> Iveco Urbanway</p>
-                <p>Městský nátěr pro autobusy Iveco.</p>
-                <a href="#" class="btn">Stáhnout repaint</a>
-            </div>
+            <!-- PRVNÍ AUTOBUS -->
+            <a href="#" class="card">
+                <div class="card-img-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Havi%C5%99ov%2C_Autobus_Karosa_B951.jpg/800px-Havi%C5%99ov%2C_Autobus_Karosa_B951.jpg" alt="IVECO Crossway">
+                </div>
+                <h3>IVECO Crossway LE line 12m – GW BUS</h3>
+            </a>
+
+            <!-- DRUHÝ AUTOBUS -->
+            <a href="#" class="card">
+                <div class="card-img-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Havi%C5%99ov%2C_Autobus_Karosa_B951.jpg/800px-Havi%C5%99ov%2C_Autobus_Karosa_B951.jpg" alt="Iveco Crossway PACK">
+                </div>
+                <h3>Iveco Crossway LE 14.5M – (PACK)</h3>
+            </a>
+
+            <!-- TŘETÍ AUTOBUS -->
+            <a href="#" class="card">
+                <div class="card-img-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Havi%C5%99ov%2C_Autobus_Karosa_B951.jpg/800px-Havi%C5%99ov%2C_Autobus_Karosa_B951.jpg" alt="Iveco Urbanway">
+                </div>
+                <h3>Iveco Urbanway 12M CNG – DPKV 434, CVR Globus</h3>
+            </a>
 
         </div>
     </div>
